@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kahaniya | Story Teller</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf5;
+    color: #25213d;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #6d4aff;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #444;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #6d4aff;
+}
+
+button {
+    background: #6d4aff;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #5135d9;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 500px;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: #6d4aff;
+}
+
+.hero-text p {
+    font-size: 19px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.hero-image {
+    font-size: 150px;
+    background: linear-gradient(135deg, #eee9ff, #ffe7f2);
+    padding: 60px;
+    border-radius: 40px;
+}
+
+/* Stories */
+.stories {
+    padding: 60px 8%;
+}
+
+.stories h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.stories-intro {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Story Line */
+.story {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.story:hover {
+    transform: translateY(-5px);
+}
+
+.story img {
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.story-content h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.story-content p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background: #fff0a8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* About */
+.about {
+    background: #f3efff;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    color: #666;
+    font-size: 18px;
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background: #211e35;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .hero-image {
+        font-size: 90px;
+        padding: 40px;
+    }
+
+    .story {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .story img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .story-content {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+
+    <div class="logo">
+        📖 Kahaniya
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#stories">Stories</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button onclick="goToStories()">
+        Explore Stories
+    </button>
+
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h1>
+            Every story has a little
+            <span>magic.</span>
+        </h1>
+
+        <p>
+            Welcome to <b>Kahaniya</b> — a beautiful place for moral stories,
+            bedtime adventures, colorful characters, and meaningful lessons.
+        </p>
+
+        <button onclick="goToStories()">
+            Start Reading →
+        </button>
+
+    </div>
+
+    <div class="hero-image">
+        🦊 🐦 🐿️
+    </div>
+
+</section>
+
+
+<!-- Stories Section -->
+<section class="stories" id="stories">
+
+    <h2>Featured Kahaniyan</h2>
+
+    <p class="stories-intro">
+        Little stories with big lessons.
+    </p>
+
+
+    <!-- Story 1 -->
+    <div class="story">
+
+        <img src="squirrel-story.jpg" alt="Kind Squirrel and Bird Story">
+
+        <div class="story-content">
+
+            <h3>
+                The Kind Squirrel & The Bird
+            </h3>
+
+            <p>
+                A beautiful story about kindness, friendship,
+                helping others, and teamwork.
+            </p>
+
+            <span class="tag">
+                Kindness • Friendship
+            </span>
+
+            <br><br>
+
+            <button onclick="readStory('The Kind Squirrel & The Bird')">
+                Read Story
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Story 2 -->
+    <div class="story">
+
+        <img src="rainbow-fish.jpg" alt="Rainbow Fish Story">
+
+        <div class="story-content">
+
+            <h3>
+                The Rainbow Fish
+            </h3>
+
+            <p>
+                A colorful story about sharing,
+                friendship, and caring for others.
+            </p>
+
+            <span class="tag">
+                Sharing • Friendship
+            </span>
+
+            <br><br>
+
+            <button onclick="readStory('The Rainbow Fish')">
+                Read Story
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Story 3 -->
+    <div class="story">
+
+        <img src="cat-fox.jpg" alt="Cat and Fox Story">
+
+        <div class="story-content">
+
+            <h3>
+                The Clever Cat & The Fox
+            </h3>
+
+            <p>
+                A wise story that teaches us not to boast
+                beyond our abilities.
+            </p>
+
+            <span class="tag">
+                Wisdom • Humility
+            </span>
+
+            <br><br>
+
+            <button onclick="readStory('The Clever Cat & The Fox')">
+                Read Story
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- About Section -->
+<section class="about" id="about">
+
+    <h2>About Kahaniya</h2>
+
+    <p>
+        Kahaniya is a storytelling website created for children,
+        families, and everyone who loves imagination. Our stories
+        bring creativity, kindness, wisdom, and valuable life lessons
+        together in one magical place.
+    </p>
+
+</section>
+
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+
+    <h2>Have a Story to Share?</h2>
+
+    <p>
+        Every storyteller has a unique Kahaniya to tell.
+    </p>
+
+    <button onclick="contactMessage()">
+        Join the Story ✨
+    </button>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <h3>📖 Kahaniya</h3>
+
+    <p>
+        Stories that spark imagination.
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Kahaniya. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function goToStories() {
+
+    document.getElementById("stories").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+function readStory(storyName) {
+
+    alert(
+        "Welcome to Kahaniya! 📖✨\n\n" +
+        "You selected: " + storyName +
+        "\n\nThe full story will be available soon."
+    );
+
+}
+
+
+function contactMessage() {
+
+    alert(
+        "Thank you for visiting Kahaniya! ❤️\n\n" +
+        "Your story can inspire someone."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
